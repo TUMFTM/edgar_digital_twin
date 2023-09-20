@@ -1,6 +1,9 @@
 # TUM EDGAR: Digital Twin
 
-Welcome to the **TUM EDGAR Digital Twin** repository! Here you will find data, parameters, and information related to our TUM EDGAR research vehicle. 
+Welcome to the **TUM EDGAR Digital Twin** repository! Here you find data, parameters, and information related to our TUM EDGAR research vehicle. 
+
+![EDGAR](source/docs/DSC07451.jpg)
+
 
 ## What is a Digital Twin?
 
