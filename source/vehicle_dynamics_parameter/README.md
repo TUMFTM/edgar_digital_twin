@@ -2,13 +2,13 @@
 
 A well-suited vehicle dynamics model plays a pivotal role in the virtual development and verification of motion planning and control algorithms. There are several models available, including single-track, double-track, multi-body models, and finite element simulations, designed to capture the intricacies of vehicle dynamics [1]. However, the challenge lies in selecting the optimal model, striking a balance between complexity and efficiency.
 
-We adopt a dynamic nonlinear single-track model to account for essential dynamic effects, considering the combined slip of lateral and longitudinal tire forces, rolling resistance, and aerodynamic effects. To simulate lateral tire forces accurately, we use the Pacejka Magic Formula [2].
+We adopt a dynamic nonlinear single-track model to account for essential dynamic effects, considering the combined slip of lateral and longitudinal tire forces, rolling resistance, and aerodynamic effects. To accurately simulate lateral tire forces, we use the Pacejka Magic Formula [2].
 
 ## Model Validation and Parameter Identification
 
 Validating the chosen model with real-world data and identifying parameter values are crucial for ensuring accuracy and reliability. We measure some parameters, including the position of the center of gravity and vehicle mass. We conduct steady-state circular driving behavior tests compliant with ISO 4138 [3] to identify further parameters. Our focus is on the constant steering-wheel angle approach, and we employ two variations: discrete- and continuous speed increase tests. We collect motion and steering data from the GPS-IMU, Correvit, and VW Series sensors.
 
-To cover both low- and high-velocity ranges, we conduct tests at velocities from 5 km/h up to 130 km/h, with steering wheel angles ranging from 45 degrees to 540 degrees in both turning directions. Under normal circumstances, i.e., clear weather, negligible wind speed, and an outside temperature of 23 degrees Celsius, we use Bridgestone 235/50R18 101H summer tires.
+To cover both low- and high-velocity ranges, we conduct tests at velocities from 5 km/h up to 130 km/h, with steering wheel angles ranging from 45 degrees to 540 degrees in both turning directions. Under normal circumstances, i.e., clear weather, negligible wind speed, and an outside temperature of 23 °C, we use Bridgestone 235/50R18 101H summer tires.
 
 ### Vehicle Setup:
 - number of passengers: one driver (65 kg)
@@ -36,7 +36,7 @@ We are using method 2 mentioned in ISO 4138: the constant steering-wheel angle t
 - varying speed: variation:
     - with discrete test speeds: the steering-wheel angle is applied with the vehicle traveling at discrete speeds, and is maintained until steady-state conditions are reached.
     - with continuous speed increase: the steering-wheel angle is held fixed while speed is increased continuously at a slow rate, up to the limit of control.
-- calculating Radius from vehicle motion
+- calculating radius from vehicle motion
 
 ### Approaches used:
 1. Discrete test speed:
@@ -57,7 +57,7 @@ We are using method 2 mentioned in ISO 4138: the constant steering-wheel angle t
 
 ## Experiment example
 This is a sample from the experiments done using the second approach (Continuous speed increase). 
-The plots of data recorded originate from three main sources: VW series sensors, Novatel GPS + IMU and Correvit sensor. 
+The plots of data recorded originate from three main sources: VW series sensors, GPS + IMU and Correvit sensor. 
 
 <p align="center">
 <img

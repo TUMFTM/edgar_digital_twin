@@ -11,7 +11,7 @@ you will then find the corresponding `unity_transform.urdf` file in this folder.
 
 ## AWSIM Prefab
 The current sensor configuration and the EDGAR geometry has been included by us in a UNITY prefab to allow a fast integration of EDGAR into AWSIM.
-Based on the available sensor suite in AWSIM, only LiDAR, camera, GNSS and imu are part of the prefab. Sensor and topic naming orients itself on the URDF file and common conventions.
+Based on the available sensor suite in AWSIM, only LiDAR, camera, GNSS and IMU are part of the prefab. Sensor and topic naming orients itself on the URDF file and common conventions.
 In the following, a list of the available topics can be found:
 ### Vehicle Status Sensor:
 ``` 
@@ -58,7 +58,7 @@ In the following, a list of the available topics can be found:
 Adding the prefab to AWSIM can happen via two ways:
 - Importing the prefab via `Assets->Import new Assets` and select the EDGAR prefab from `models->high res->AWSIM`
 - drag the prefab from the explorer to the asset library in unity.
-Further, EDGAR then needs to be spawned in the scene by dragging the prefab from the asset library in Unity into the environment object. When hitting plax, EDGAR should now send the corresponding sensor messages and react to inputs.
+Further, EDGAR then needs to be spawned in the scene by dragging the prefab from the asset library in Unity into the environment object. When hitting play, EDGAR should now send the corresponding sensor messages and react to inputs.
 
 The prefab was generated using the [AWSIM Documentation](https://github.com/tier4/AWSIM/tree/main/docs/Components/Vehicle/AddNewVehicle/index.md)
 
