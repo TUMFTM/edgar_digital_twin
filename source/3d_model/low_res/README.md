@@ -1,0 +1,2 @@
+# Low Resolution 3D Models
+In this folder, the low resolution model of EDGAR is given. The edgar.dae is a downsampled visual 3D model for the usage in simulation environment such as the [Robot State Publisher](https://github.com/ros/robot_state_publisher).

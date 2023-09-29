@@ -1,0 +1,135 @@
+
+# Paramter set for vehicle dynamics modelling
+# based on the DOT (department of transportation) vehicle dynamics
+
+# vehicle body dimensions
+# vehicle length [m]
+l: 4.973
+# vehicle width [m]
+w: 1.941
+# vehicle height [m]
+h: 2.320 
+
+# steering constraints
+steering:
+  # minimum steering angle [rad] (steering angle of front wheel)
+  max: 0.610865
+  # maximum steering angle [rad]
+  min: -0.610865
+  # minimum steering velocity [rad/s]
+  v_max:
+  # maximum steering velocity [rad/s]
+  v_min: 
+  # curvature [1/m]
+  kappa_max: 0.2195
+  kappa_min: -0.2195
+  # maximum curvature change
+  kappa_dot_max: 
+  # maximum curvature rate rate
+  kappa_dot_dot_max: 
+
+# longitudinal constraints
+longitudinal:
+  # maximum absolute acceleration [m/s^2] for v>40 km/h
+  a_max: 2.5
+  # minimum absolute acceleration [m/s^2] for v>40 km/h
+  a_max: -3.5
+  # maximum longitudinal jerk [m/s^3]
+  j_max: 
+  # maximum longitudinal jerk change [m/s^4]
+  j_dot_max:
+  # maximum velocity [m/s]
+  v_max: 
+  # minimum velocity [m/s]
+  v_min: 
+  # switching velocity [m/s]
+  v_switch: 
+
+# masses
+# vehicle mass [kg]  MASS
+m: 2520
+# sprung mass [kg]  SMASS
+m_s: 
+# unsprung mass front [kg]  UMASSF
+m_uf: 
+# unsprung mass rear [kg]  UMASSR
+m_ur: 
+
+# axes distances
+# distance from spring mass center of gravity to front axle [m]  LENA
+a: 1.724
+# distance from spring mass center of gravity to rear axle [m]  LENB
+b: 1.247
+
+# moments of inertia of sprung mass
+# moment of inertia for sprung mass in roll [kg m^2]  IXS
+I_Phi_s: 
+# moment of inertia for sprung mass in pitch [kg m^2]  IYS
+I_y_s: 
+# moment of inertia for sprung mass in yaw [kg m^2]  IZZ
+I_z: 35000
+# moment of inertia cross product [kg m^2]  IXZ
+I_xz_s: 
+
+# suspension parameters
+# suspension spring rate (front) [N/m]  KSF
+K_sf: 
+# suspension damping rate (front) [N s/m]  KSDF
+K_sdf: 
+# suspension spring rate (rear) [N/m]  KSR
+K_sr: 
+# suspension damping rate (rear) [N s/m]  KSDR
+K_sdr: 
+
+# geometric parameters
+# track width front [m]  TRWF
+T_f: 1.645
+# track width rear [m]  TRWB
+T_r: 
+# lateral spring rate at compliant compliant pin joint between M_s and M_u [N/m]  KRAS
+K_ras: 
+
+# auxiliary torsion roll stiffness per axle (normally negative) (front) [N m/rad]  KTSF
+K_tsf: 
+# auxiliary torsion roll stiffness per axle (normally negative) (rear) [N m/rad]  KTSR
+K_tsr: 
+# damping rate at compliant compliant pin joint between M_s and M_u [N s/m]  KRADP
+K_rad: 
+# vertical spring rate of tire [N/m]  KZT
+K_zt: 
+
+# center of gravity height of total mass [m]  HCG (mainly required for conversion to other vehicle models)
+h_cg: 
+# height of roll axis above ground (front) [m]  HRAF
+h_raf: 
+# height of roll axis above ground (rear) [m]  HRAR
+h_rar: 
+
+# M_s center of gravity above ground [m]  HS
+h_s: 
+
+# moment of inertia for unsprung mass about x-axis (front) [kg m^2]  IXUF
+I_uf: 
+# moment of inertia for unsprung mass about x-axis (rear) [kg m^2]  IXUR
+I_ur: 
+# wheel inertia, from internet forum for 235/65 R 17 [kg m^2]
+I_y_w: 
+
+# lateral compliance rate of tire, wheel, and suspension, per tire [m/N]  KLT
+K_lt: 
+# effective wheel/tire radius  chosen as tire rolling radius RR  taken from ADAMS documentation [m]
+R_w: 
+
+# split of brake and engine torque
+T_sb: 
+T_se: 
+
+# suspension parameters
+# Front [rad/m]  DF
+D_f: 
+# Rear [rad/m]  DR
+D_r: 
+# Front [needs conversion if nonzero]  EF
+E_f: 
+#  Rear[needs conversion if nonzero]  ER
+E_r: 

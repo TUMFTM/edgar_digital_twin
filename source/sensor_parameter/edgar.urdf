@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<robot name="EDGAR">
+
+  <!--Base frame-->
+  <link name="rear_axle_center_ground">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+	      <mesh filename="file:///absolute/path/to/the/3d_model/low_res/edgar.fbx" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!--Links-->
+  <link name="base_link"/>
+  <link name="rack_rear_center"/>
+  <link name="rear_axle_center"/>
+
+  <link name="gnss_left"/>
+  <link name="gnss_right"/>
+
+  <link name="imu"/>
+
+  <link name="lidar_ouster_left"/>
+  <link name="lidar_ouster_right"/>
+  <link name="lidar_innovusion_front"/>
+  <link name="lidar_innovusion_rear"/>
+
+  <link name="radar_front_left"/>
+  <link name="radar_front_right"/>
+  <link name="radar_front_center"/>
+  <link name="radar_rear_left"/>
+  <link name="radar_rear_right"/>
+  <link name="radar_rear_center"/>
+
+  <link name="camera_sr_front_left"/>
+  <link name="camera_sr_front_right"/>
+  <link name="camera_sr_front_center"/>
+  <link name="camera_sr_rear_left"/>
+  <link name="camera_sr_rear_right"/>
+  <link name="camera_sr_rear_center"/>
+
+  <link name="camera_lr_front_left"/>
+  <link name="camera_lr_front_right"/>
+
+  <link name="framos_front_left"/>
+  <link name="framos_front_right"/>
+
+  <link name="mimo_left"/>
+  <link name="mimo_right"/>
+  <link name="mimo_center"/>
+
+  <link name="microphone_front_left"/>
+  <link name="microphone_front_right"/>
+  <link name="microphone_rear_left"/>
+  <link name="microphone_rear_right"/>
+
+  <!--Base link joint-->
+  <joint name="rear_axle_center_ground_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rear_axle_center_ground"/>
+    <origin xyz="0.0 0.0 0.0"/>
+  </joint>
+
+  <!--Rack joint-->
+  <joint name="rack_rear_center_joint" type="fixed">
+    <parent link="rear_axle_center_ground"/>
+    <child link="rack_rear_center"/>
+    <origin xyz="-0.502 0.0 1.97" />
+  </joint>
+
+  <!--Reference joint-->
+  <joint name="rear_axle_center_joint" type="fixed">
+    <parent link="rear_axle_center_ground"/>
+    <child link="rear_axle_center"/>
+    <origin xyz="0.0 0.0 0.338" />
+  </joint>
+
+
+  <!--GNSS joints-->
+  <joint name="gnss_left_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="gnss_left"/>
+    <origin xyz="1.475 0.545 1.714"/>
+  </joint>
+
+  <joint name="gnss_right_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="gnss_right"/>
+    <origin xyz="1.475 -0.545 1.714"/>
+  </joint>
+
+
+  <!--IMU joint-->
+  <joint name="imu_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="imu"/>
+    <origin xyz="0.321 -0.007 0.208" rpy="0.0 0.0 1.5708"/>
+  </joint>
+
+
+  <!--LiDAR joints-->
+  <joint name="lidar_ouster_left_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="lidar_ouster_left"/>
+    <origin xyz="2.312053 0.581505 1.610277" rpy="-0.3461248 0.0165291 -0.0162606"/>
+  </joint>
+
+  <joint name="lidar_ouster_right_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="lidar_ouster_right"/>
+    <origin xyz="2.311906 -0.664888 1.612698" rpy="0.3551248 0.0165291 0.0061281"/>
+  </joint>
+
+  <joint name="lidar_innovusion_front_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="lidar_innovusion_front"/>
+    <origin xyz="2.259 0.0 1.600" rpy="3.14159265 -1.369065 0.0"/>
+  </joint>
+
+  <joint name="lidar_innovusion_rear_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="lidar_innovusion_rear"/>
+    <origin xyz="-0.3987347 0.002735673 1.760425312" rpy="0.0000291 -1.7552732 0"/>
+  </joint>
+
+
+  <!--Radar joints-->
+  <joint name="radar_front_left_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="radar_front_left"/>
+    <origin xyz="3.964 0.655 0.170" rpy="0.0 0.0 0.383972"/>
+  </joint>
+
+  <joint name="radar_front_right_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="radar_front_right"/>
+    <origin xyz="3.965 -0.645 0.170" rpy="0.0 0.0174533 -0.383972"/>
+  </joint>
+
+  <joint name="radar_front_center_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="radar_front_center"/>
+    <origin xyz="4.060 -0.220 0.043" rpy="0.0 0.0698132 0.0"/>
+  </joint>
+
+  <joint name="radar_rear_left_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="radar_rear_left"/>
+    <origin xyz="-0.844 0.716 0.085" rpy="0.0 0.0174533 2.79253"/>
+  </joint>
+
+  <joint name="radar_rear_center_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="radar_rear_center"/>
+    <origin xyz="-0.920 -0.008 0.083" rpy="0.0 0.0174533 0.0"/>
+  </joint>
+
+  <joint name="radar_rear_right_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="radar_rear_right"/>
+    <origin xyz="-0.842 -0.715 0.085" rpy="0.0 0.0523599 -2.79253"/>
+  </joint>
+
+  <!--Camera SR joints-->
+  <joint name="camera_sr_front_left_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="camera_sr_front_left"/>
+    <origin xyz="2.175 0.585 1.705" rpy="0.0 0.174533 1.22173"/>
+  </joint>
+
+  <joint name="camera_sr_front_right_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="camera_sr_front_right"/>
+    <origin xyz="2.175 -0.585 1.705" rpy="0.0 0.174533 -1.22173"/>
+  </joint>
+
+  <joint name="camera_sr_front_center_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="camera_sr_front_center"/>
+    <origin xyz="2.193 0.0 1.705" rpy="0.0 0.174533 0.0"/>
+  </joint>
+
+  <joint name="camera_sr_rear_left_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="camera_sr_rear_left"/>
+    <origin xyz="-0.26 0.582 1.75" rpy="0.0 0.174533 1.5708"/>
+  </joint>
+
+  <joint name="camera_sr_rear_right_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="camera_sr_rear_right"/>
+    <origin xyz="-0.26 -0.582 1.75" rpy="0.0 0.174533 -1.5708"/>
+  </joint>
+
+  <joint name="camera_sr_rear_center_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="camera_sr_rear_center"/>
+    <origin xyz="-0.34 -0.001 1.75" rpy="0.0 0.174533 3.14159"/>
+  </joint>
+
+
+  <!--Camera LR joints-->
+  <joint name="camera_lr_front_left_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="camera_lr_front_left"/>
+    <origin xyz="2.163 0.385 1.705" rpy="0.0 0.0 0.0"/>
+  </joint>
+
+  <joint name="camera_lr_front_right_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="camera_lr_front_right"/>
+    <origin xyz="2.163 -0.385 1.705" rpy="0.0 0.0 0.0"/>
+  </joint>
+
+
+  <!--Camera FRAMOS joints-->
+  <joint name="framos_front_left_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="framos_front_left"/>
+    <origin xyz="2.203 0.195 1.705" rpy="0.0 0.0 0.0"/>
+  </joint>
+
+  <joint name="framos_front_right_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="framos_front_right"/>
+    <origin xyz="2.203 -0.195 1.705" rpy="0.0 0.0 0.0"/>
+  </joint>
+
+
+  <!--MIMO joints-->
+  <joint name="mimo_left_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="mimo_left"/>
+    <origin xyz="0.23 0.547 1.737" rpy="0.0 0.0 0.0"/>
+  </joint>
+
+  <joint name="mimo_right_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="mimo_right"/>
+    <origin xyz="0.231 -0.548 1.737" rpy="0.0 0.0 0.0"/>
+  </joint>
+
+  <joint name="mimo_center_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="mimo_center"/>
+    <origin xyz="0.851 0.0 1.729" rpy="0.0 0.0 0.0"/>
+  </joint>
+
+
+  <!--Microphone joints-->
+  <joint name="microphone_front_left_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="microphone_front_left"/>
+    <origin xyz="3.819 0.821 0.173" rpy="0.0 0.0 0.785398"/>
+  </joint>
+
+  <joint name="microphone_front_right_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="microphone_front_right"/>
+    <origin xyz="3.817 -0.822 0.173" rpy="0.0 0.0 -0.785398"/>
+  </joint>
+
+    <joint name="microphone_rear_left_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="microphone_rear_left"/>
+    <origin xyz="-0.701 0.875 0.37" rpy="0.0 0.0 2.32129"/>
+  </joint>
+
+  <joint name="microphone_rear_right_joint" type="fixed">
+    <parent link="rear_axle_center"/>
+    <child link="microphone_rear_right"/>
+    <origin xyz="-0.7 -0.875 0.37" rpy="0.0 0.0 -2.32129"/>
+  </joint>
+
+
+
+</robot>
