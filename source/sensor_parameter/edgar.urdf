@@ -6,7 +6,7 @@
     <visual>
       <origin xyz="0 0 0"/>
       <geometry>
-	      <mesh filename="file:///absolute/path/to/the/3d_model/low_res/edgar.dae" scale="1 1 1"/>
+	      <mesh filename="file:///absolute/path/to/the/3d_model/low_res/edgar.fbx" scale="1 1 1"/>
       </geometry>
     </visual>
   </link>

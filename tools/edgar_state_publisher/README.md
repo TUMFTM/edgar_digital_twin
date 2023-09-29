@@ -20,7 +20,7 @@ Once the robot_state_publisher is ready to go move the [edgar.urdf](../../source
 mv path/to/edgar.urdf path/to/robot_state_publisher/urdf
 ```
 
-In case you want to use the EDGAR [3d model](../../source/3d_model/low_res/edgar.dae) make sure you provide a correct absolute path to the model. You will find the reference in the first link definition of the [edgar.urdf](../../source/sensor_parameter/edgar.urdf) as shown in this urdf snippet:
+In case you want to use the EDGAR [3d model](../../source/3d_model/low_res/edgar.fbx) make sure you provide a correct absolute path to the model. You will find the reference in the first link definition of the [edgar.urdf](../../source/sensor_parameter/edgar.urdf) as shown in this urdf snippet:
 
 ```
   <!--Base frame-->
@@ -28,7 +28,7 @@ In case you want to use the EDGAR [3d model](../../source/3d_model/low_res/edgar
     <visual>
       <origin xyz="0 0 0"/>
       <geometry>
-	      <mesh filename="file:///absolute/path/to/the/3d_model/low_res/edgar.dae" scale="1 1 1"/>
+	      <mesh filename="file:///absolute/path/to/the/3d_model/low_res/edgar.fbx" scale="1 1 1"/>
       </geometry>
     </visual>
   </link>
@@ -47,7 +47,7 @@ def generate_launch_description():
 
 We also provide [edgar.launch.py](launch/edgar.launch.py), feel free to use it.
 
-Once the URDF file and the [3d model](../../source/3d_model/low_res/edgar.dae) is referenced properly, you can test the integration by launching 
+Once the URDF file and the [3d model](../../source/3d_model/low_res/edgar.fbx) is referenced properly, you can test the integration by launching 
 
 ```sh
 ros2 launch robot_state_publisher edgar.launch.py

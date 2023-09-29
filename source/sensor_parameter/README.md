@@ -27,7 +27,7 @@ The edgar.urdf is structured as follows:
 	- [camera_sr_front_left](edgar.urdf#L36)
 	- ...
 	
-	Links can also be visualized using geometric features. We use a [3d model](../3d_model/low_res/edgar.dae) for EDGAR (see first section in the [edgar.urdf](edgar.urdf) file).  
+	Links can also be visualized using geometric features. We use a [3d model](../3d_model/low_res/edgar.fbx) for EDGAR (see first section in the [edgar.urdf](edgar.urdf) file).  
 
 3. The joint elements describe the relative transformation between two links with the origin being the relative position of the child link with respect to the parent link. All [joints](edgar.urdf#L73) in the EDGAR URDF are defined as fixed.
 
