@@ -14,8 +14,8 @@ To cover both low- and high-velocity ranges, we conduct tests at velocities from
 - number of passengers: one driver (65 kg)
 - number of mounted seats: 5 seats
 - total vehicle mass: 2520 kg
-- lf = 1.724 m: distance from spring mass center of gravity to front axle 
-- lr = 1.247 m: distance from spring mass center of gravity to rear axle 
+- lf = 1.484 m: distance from spring mass center of gravity to front axle 
+- lr = 1.644 m: distance from spring mass center of gravity to rear axle 
 - outside temperature: 23 °C
 - wind speed: almost 0 km/h
 - tyre type, brand, size: 4 x Bridgestone 235/50R18 101H summer tyres
@@ -83,8 +83,8 @@ The main identified single-track and tire model parameters are listed in the fol
 | Parameter        | Value   | Unit              | Description                         |
 | ---------------- | ------- | ----------------- | ----------------------------------- |
 | $l$              | 3.128   | m             | Wheelbase                           |
-| $l_{\mathrm{f}}$ | 1.724   | m             | Front axle to center of gravity     |
-| $l_{\mathrm{r}}$ | 1.247   | m             | Rear axle to center of gravity      |
+| $l_{\mathrm{f}}$ | 1.484   | m             | Front axle to center of gravity     |
+| $l_{\mathrm{r}}$ | 1.644   | m             | Rear axle to center of gravity      |
 | $m$              | 2,520   | kg          | Vehicle mass                         |
 | $I_{\mathrm{z}}$ | 13,600  | kg·m²       | Moment of inertia in yaw            |
 | $\rho$           | 1.225   | kg/m³       | Air density                         |
@@ -95,10 +95,10 @@ The main identified single-track and tire model parameters are listed in the fol
 
 | Parameter | Front | Rear  | Description         |
 | --------- | ----- | ----- | ------------------- |
-| $B$       | 10    | 12.4  | Stiffness factor    |
-| $C$       | 1     | 1.8   | Shape factor        |
-| $D$       | 1.1·$F_{z,f}$ | 2.1·$F_{z,r}$ | Peak value |
-| $E$       | -5    | -5    | Curvature factor    |
+| $B$       | 10    | 10  | Stiffness factor    |
+| $C$       | 1.3     | 1.6   | Shape factor        |
+| $D$       | 1.2·$F_{z,f}$ | 2.1·$F_{z,r}$ | Peak value |
+| $E$       | 0.97    | 0.97    | Curvature factor    |
 
 ## References
 
