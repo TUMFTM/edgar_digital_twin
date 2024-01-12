@@ -6,5 +6,5 @@ The following files are part of the folder:
 |---|---|
 | Edgar_T7.fbx | Visual 3D model for the Simulation Environments|
 | edgar.unitypackage  | Unity Prefab of EDGAR including all Sensor positions - plug and play |
-| SM_sc_T7.fbx          | The raycast sensor mesh is used by CARLA's sensors to detect the vehicle.                   |
-| SMC_T7.fbx            | The physical asset mesh used by Unreal to calculate vehicles's physics                   |
+| SMC_EDGAR_T7.fbx            | The physical asset mesh used by Unreal to calculate vehicles's physics                   |
+| SMC_sc_EDGAR_T7.fbx          | The raycast sensor mesh is used by CARLA's sensors to detect the vehicle.                   |
