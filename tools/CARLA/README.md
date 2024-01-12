@@ -40,7 +40,7 @@ The steps are briefly described below
 
 1. Create a folder `EDGAR_T7` for the vehicle under the Unreal Engine Folder `Content/Carla/Static/Car/4Wheeled`
    - *Depending on the CARLA distribution the folder can also be called* `Content/Carla/Static/Vehicles/4Wheeled`
-2. Import the skeletal / render mesh [EDGAR_T7.fbx](../../source/3d_model/high_res/EDGAR_T7.fbx), the physical asset mesh [SMC_EDGAR_T7.fbx](../../source/3d_model/high_res/SMC_EDGAR_T7.fbx.fbx) and raycasting mesh  [SMC_sc_EDGAR_T7.fbx](../../source/3d_model/high_res/SMC_sc_EDGAR_T7.fbx).
+2. Import the skeletal / render mesh [EDGAR_T7.fbx](../../source/3d_model/high_res/EDGAR_T7.fbx), the physical asset mesh [SMC_EDGAR_T7.fbx](../../source/3d_model/high_res/SMC_EDGAR_T7.fbx) and raycasting mesh  [SMC_sc_EDGAR_T7.fbx](../../source/3d_model/high_res/SMC_sc_EDGAR_T7.fbx).
 3. Setting the physical asset mesh. Here the SMC_EDGAR_T7.fbx file is needed.
 4. Create the Animation Blueprint.
 5. Configure the Animation Blueprint.
