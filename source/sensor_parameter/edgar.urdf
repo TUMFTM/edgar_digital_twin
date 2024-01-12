@@ -4,9 +4,9 @@
   <!--Base frame-->
   <link name="rear_axle_center_ground">
     <visual>
-      <origin xyz="0 0 0"/>
+      <origin rpy = "0 0 1.57079632679" xyz="0 0 0"/>
       <geometry>
-	      <mesh filename="file:///absolute/path/to/the/3d_model/low_res/edgar.fbx" scale="1 1 1"/>
+	      <mesh filename="file:///absolute/path/to/the/3d_model/high_res/EDGAR_T7.fbx" scale="0.01 0.01 0.01"/>
       </geometry>
     </visual>
   </link>

@@ -54,17 +54,3 @@ If you have any questions, feel free to contact our [EDGAR-Team](https://www.mos
 
 ## References
 P. Karle et al., "EDGAR: An Autonomous Driving Research Platform - From Feature Development to Real-World Application" (under review)
-
-<!-- BibTex:
-```
-@ARTICLE{Karle2023_2,
-  author={Karle, Phillip and Török, Ferenc and Geisslinger, Maximilian and Lienkamp, Markus},
-  journal={IEEE Access}, 
-  title={MixNet: Physics Constrained Deep Neural Motion Prediction for Autonomous Racing}, 
-  year={2023},
-  volume={11},
-  number={},
-  pages={85914-85926},
-  doi={10.1109/ACCESS.2023.3303841}
-}
-``` -->
