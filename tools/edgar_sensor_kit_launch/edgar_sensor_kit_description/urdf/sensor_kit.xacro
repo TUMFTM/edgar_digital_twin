@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="sensor_kit_macro" params="parent x y z roll pitch yaw">
+    <xacro:include filename="$(find vls_description)/urdf/VLS-128.urdf.xacro"/>
+    <xacro:include filename="$(find camera_description)/urdf/monocular_camera.xacro"/>
+    <xacro:include filename="$(find imu_description)/urdf/imu.xacro"/>
+
+    <xacro:arg name="gpu" default="false"/>
+    <xacro:arg name="config_dir" default="$(find edgar_sensor_kit_description)/config"/>
+
+    <xacro:property name="sensor_kit_base_link" default="sensor_kit_base_link"/>
+
+    <joint name="${sensor_kit_base_link}_joint" type="fixed">
+      <origin rpy="${roll} ${pitch} ${yaw}" xyz="${x} ${y} ${z}"/>
+      <parent link="${parent}"/>
+      <child link="${sensor_kit_base_link}"/>
+    </joint>
+    <link name="${sensor_kit_base_link}">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </link>
+
+    <!-- sensor -->
+    <xacro:property name="calibration" value="${xacro.load_yaml('$(arg config_dir)/sensor_kit_calibration.yaml')}"/>
+
+    <!-- lidar -->
+    <xacro:VLS-128 parent="sensor_kit_base_link" name="lidar_ouster_frontleft" hz="10" lasers="128" samples="1024" collision_range="0.3" min_range="0.3" max_range="100.0" noise="0.008" min_angle="-${M_PI}" max_angle="${M_PI}" gpu="$(arg gpu)">
+      <origin
+        xyz="${calibration['sensor_kit_base_link']['lidar_ouster_frontleft']['x']}
+             ${calibration['sensor_kit_base_link']['lidar_ouster_frontleft']['y']}
+             ${calibration['sensor_kit_base_link']['lidar_ouster_frontleft']['z']}"
+        rpy="${calibration['sensor_kit_base_link']['lidar_ouster_frontleft']['roll']}
+             ${calibration['sensor_kit_base_link']['lidar_ouster_frontleft']['pitch']}
+             ${calibration['sensor_kit_base_link']['lidar_ouster_frontleft']['yaw']}"
+      />
+    </xacro:VLS-128>
+    <xacro:VLS-128 parent="sensor_kit_base_link" name="lidar_ouster_frontright" hz="10" lasers="128" samples="1024" collision_range="0.3" min_range="0.3" max_range="100.0" noise="0.008" min_angle="-${M_PI}" max_angle="${M_PI}" gpu="$(arg gpu)">
+      <origin
+        xyz="${calibration['sensor_kit_base_link']['lidar_ouster_frontright']['x']}
+             ${calibration['sensor_kit_base_link']['lidar_ouster_frontright']['y']}
+             ${calibration['sensor_kit_base_link']['lidar_ouster_frontright']['z']}"
+        rpy="${calibration['sensor_kit_base_link']['lidar_ouster_frontright']['roll']}
+             ${calibration['sensor_kit_base_link']['lidar_ouster_frontright']['pitch']}
+             ${calibration['sensor_kit_base_link']['lidar_ouster_frontright']['yaw']}"
+      />
+    </xacro:VLS-128>
+    <xacro:VLS-128 parent="sensor_kit_base_link" name="lidar_innovusion_frontcenter" hz="10" lasers="60" samples="1500" collision_range="0.3" min_range="0.3" max_range="250.0" noise="0.008" min_angle="-${M_PI}" max_angle="${M_PI}" gpu="$(arg gpu)">
+      <origin
+        xyz="${calibration['sensor_kit_base_link']['lidar_innovusion_frontcenter']['x']}
+             ${calibration['sensor_kit_base_link']['lidar_innovusion_frontcenter']['y']}
+             ${calibration['sensor_kit_base_link']['lidar_innovusion_frontcenter']['z']}"
+        rpy="${calibration['sensor_kit_base_link']['lidar_innovusion_frontcenter']['roll']}
+             ${calibration['sensor_kit_base_link']['lidar_innovusion_frontcenter']['pitch']}
+             ${calibration['sensor_kit_base_link']['lidar_innovusion_frontcenter']['yaw']}"
+      />
+    </xacro:VLS-128>
+    <xacro:VLS-128 parent="sensor_kit_base_link" name="lidar_innovusion_rearcenter" hz="10" lasers="60" samples="1500" collision_range="0.3" min_range="2" max_range="250.0" noise="0.008" min_angle="-0.698" max_angle="$0.698" gpu="$(arg gpu)">
+      <origin
+        xyz="${calibration['sensor_kit_base_link']['lidar_innovusion_rearcenter']['x']}
+             ${calibration['sensor_kit_base_link']['lidar_innovusion_rearcenter']['y']}
+             ${calibration['sensor_kit_base_link']['lidar_innovusion_rearcenter']['z']}"
+        rpy="${calibration['sensor_kit_base_link']['lidar_innovusion_rearcenter']['roll']}
+             ${calibration['sensor_kit_base_link']['lidar_innovusion_rearcenter']['pitch']}
+             ${calibration['sensor_kit_base_link']['lidar_innovusion_rearcenter']['yaw']}"
+      />
+    </xacro:VLS-128>
+
+    <!-- camera -->
+    <xacro:monocular_camera_macro
+      name="camera_basler_frontcenter"
+      parent="sensor_kit_base_link"
+      namespace=""
+      x="${calibration['sensor_kit_base_link']['camera_basler_frontcenter']['x']}"
+      y="${calibration['sensor_kit_base_link']['camera_basler_frontcenter']['y']}"
+      z="${calibration['sensor_kit_base_link']['camera_basler_frontcenter']['z']}"
+      roll="${calibration['sensor_kit_base_link']['camera_basler_frontcenter']['roll']}"
+      pitch="${calibration['sensor_kit_base_link']['camera_basler_frontcenter']['pitch']}"
+      yaw="${calibration['sensor_kit_base_link']['camera_basler_frontcenter']['yaw']}"
+      fps="10"
+      width="1920"
+      height="1200"
+      fov="${M_PI} / 2.0"
+    />
+    <xacro:monocular_camera_macro
+      name="camera_basler_frontright"
+      parent="sensor_kit_base_link"
+      namespace=""
+      x="${calibration['sensor_kit_base_link']['camera_basler_frontright']['x']}"
+      y="${calibration['sensor_kit_base_link']['camera_basler_frontright']['y']}"
+      z="${calibration['sensor_kit_base_link']['camera_basler_frontright']['z']}"
+      roll="${calibration['sensor_kit_base_link']['camera_basler_frontright']['roll']}"
+      pitch="${calibration['sensor_kit_base_link']['camera_basler_frontright']['pitch']}"
+      yaw="${calibration['sensor_kit_base_link']['camera_basler_frontright']['yaw']}"
+      fps="10"
+      width="1920"
+      height="1200"
+      fov="${M_PI} / 2.0"
+    />
+    <xacro:monocular_camera_macro
+      name="camera_basler_frontleft"
+      parent="sensor_kit_base_link"
+      namespace=""
+      x="${calibration['sensor_kit_base_link']['camera_basler_frontleft']['x']}"
+      y="${calibration['sensor_kit_base_link']['camera_basler_frontleft']['y']}"
+      z="${calibration['sensor_kit_base_link']['camera_basler_frontleft']['z']}"
+      roll="${calibration['sensor_kit_base_link']['camera_basler_frontleft']['roll']}"
+      pitch="${calibration['sensor_kit_base_link']['camera_basler_frontleft']['pitch']}"
+      yaw="${calibration['sensor_kit_base_link']['camera_basler_frontleft']['yaw']}"
+      fps="10"
+      width="1920"
+      height="1200"
+      fov="${M_PI} / 2.0"
+    />
+    <xacro:monocular_camera_macro
+      name="camera_basler_rearcenter"
+      parent="sensor_kit_base_link"
+      namespace=""
+      x="${calibration['sensor_kit_base_link']['camera_basler_rearcenter']['x']}"
+      y="${calibration['sensor_kit_base_link']['camera_basler_rearcenter']['y']}"
+      z="${calibration['sensor_kit_base_link']['camera_basler_rearcenter']['z']}"
+      roll="${calibration['sensor_kit_base_link']['camera_basler_rearcenter']['roll']}"
+      pitch="${calibration['sensor_kit_base_link']['camera_basler_rearcenter']['pitch']}"
+      yaw="${calibration['sensor_kit_base_link']['camera_basler_rearcenter']['yaw']}"
+      fps="10"
+      width="1920"
+      height="1200"
+      fov="${M_PI} / 2.0"
+    />
+    <xacro:monocular_camera_macro
+      name="camera_basler_rearright"
+      parent="sensor_kit_base_link"
+      namespace=""
+      x="${calibration['sensor_kit_base_link']['camera_basler_rearright']['x']}"
+      y="${calibration['sensor_kit_base_link']['camera_basler_rearright']['y']}"
+      z="${calibration['sensor_kit_base_link']['camera_basler_rearright']['z']}"
+      roll="${calibration['sensor_kit_base_link']['camera_basler_rearright']['roll']}"
+      pitch="${calibration['sensor_kit_base_link']['camera_basler_rearright']['pitch']}"
+      yaw="${calibration['sensor_kit_base_link']['camera_basler_rearright']['yaw']}"
+      fps="10"
+      width="1920"
+      height="1200"
+      fov="${M_PI} / 2.0"
+    />
+    <xacro:monocular_camera_macro
+      name="camera_basler_rearleft"
+      parent="sensor_kit_base_link"
+      namespace=""
+      x="${calibration['sensor_kit_base_link']['camera_basler_rearleft']['x']}"
+      y="${calibration['sensor_kit_base_link']['camera_basler_rearleft']['y']}"
+      z="${calibration['sensor_kit_base_link']['camera_basler_rearleft']['z']}"
+      roll="${calibration['sensor_kit_base_link']['camera_basler_rearleft']['roll']}"
+      pitch="${calibration['sensor_kit_base_link']['camera_basler_rearleft']['pitch']}"
+      yaw="${calibration['sensor_kit_base_link']['camera_basler_rearleft']['yaw']}"
+      fps="10"
+      width="1920"
+      height="1200"
+      fov="${M_PI} / 2.0"
+    />
+
+    <!-- imu -->
+    <xacro:imu_macro
+      name="imu_novatel_center"
+      parent="sensor_kit_base_link"
+      namespace=""
+      x="${calibration['sensor_kit_base_link']['imu_novatel_center']['x']}"
+      y="${calibration['sensor_kit_base_link']['imu_novatel_center']['y']}"
+      z="${calibration['sensor_kit_base_link']['imu_novatel_center']['z']}"
+      roll="${calibration['sensor_kit_base_link']['imu_novatel_center']['roll']}"
+      pitch="${calibration['sensor_kit_base_link']['imu_novatel_center']['pitch']}"
+      yaw="${calibration['sensor_kit_base_link']['imu_novatel_center']['yaw']}"
+      fps="200"
+    />
+
+  </xacro:macro>
+</robot>
