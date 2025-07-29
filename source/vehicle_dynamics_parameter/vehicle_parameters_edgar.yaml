@@ -57,9 +57,9 @@ m_ur:
 
 # axes distances
 # distance from spring mass center of gravity to front axle [m]  LENA
-a:
+a: 1.484
 # distance from spring mass center of gravity to rear axle [m]  LENB
-b:
+b: 1.644
 
 # moments of inertia of sprung mass
 # moment of inertia for sprung mass in roll [kg m^2]  IXS
