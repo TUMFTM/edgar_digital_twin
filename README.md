@@ -37,6 +37,11 @@ The parameter set can be found in the file [vehicle_parameters_edgar.yaml](sourc
 
 ### Tools
 
+#### edgar_sensor_kit_launch
+A repository with the edgar launch description for the Autoware software stack (tested on 0.41.0).
+
+#### edgar_vehicle_model
+A repository with the edgar vehicle model for the Autoware software stack (tested on 0.41.0).
 
 #### AWSIM
 The given tool can be used to integrate our research vehicle as 3D-model in the [AWSIM](https://github.com/tier4/AWSIM) simulation environment by TierIV. A detailed description how to use the tool is given in the [README](tools/AWSIM/README.md).
