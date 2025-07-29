@@ -1,0 +1,99 @@
+sensor_kit_base_link:
+  camera_basler_frontcenter:
+    x: 2.193
+    y: 0.0
+    z: 1.705
+    roll: 0.0
+    pitch: 0.174533
+    yaw: 0.0
+  camera_basler_frontright:
+    x: 2.175
+    y: -0.585
+    z: 1.705
+    roll: 0.0
+    pitch: 0.174533
+    yaw: -1.22173
+  camera_basler_frontleft:
+    x: 2.175
+    y: 0.585
+    z: 1.705
+    roll: 0.0
+    pitch: 0.174533
+    yaw: 1.22173
+  camera_basler_rearcenter:
+    x: -0.34
+    y: -0.001
+    z: 1.75
+    roll: 0.0
+    pitch: 0.174533
+    yaw: 3.14159
+  camera_basler_rearright:
+    x: -0.26
+    y: -0.582
+    z: 1.75
+    roll: 0.0
+    pitch: 0.174533
+    yaw: -1.5708
+  camera_basler_rearleft:
+    x: -0.26
+    y: 0.582
+    z: 1.75
+    roll: 0.0
+    pitch: 0.174533
+    yaw: 1.5708
+  camera_basler_frontcenterright:
+    x: 2.163
+    y: -0.385
+    z: 1.705
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0
+  camera_basler_frontcenterleft:
+    x: 2.163
+    y: 0.385
+    z: 1.705
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0
+  lidar_ouster_frontleft:
+    x: 2.312053
+    y: 0.581505
+    z: 1.610277
+    roll: -0.3461248
+    pitch: 0.0165291
+    yaw: -0.0162606
+  lidar_ouster_frontright:
+    x: 2.311906
+    y: -0.664888
+    z: 1.612698
+    roll: 0.3551248
+    pitch: 0.0165291
+    yaw: 0.0061281
+  lidar_innovusion_frontcenter:
+    x: 2.259
+    y: 0.0
+    z: 1.600
+    roll: 3.14159265
+    pitch: -1.369065
+    yaw: 0.0
+  lidar_innovusion_rearcenter:
+    x: -0.3987347
+    y: 0.002735673
+    z: 1.760425312
+    roll: 0.0000291
+    pitch: -1.7552732
+    yaw: 0.0
+  antenna_novatel_left:
+    x: 1.475
+    y: 0.545
+    z: 1.714
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0
+  imu_novatel_center:
+    x: 0.321
+    y: -0.007
+    z: 0.208
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0

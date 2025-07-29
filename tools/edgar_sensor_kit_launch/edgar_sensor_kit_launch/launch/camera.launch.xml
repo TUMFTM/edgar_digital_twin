@@ -1,0 +1,80 @@
+<launch>
+  <group>
+    <push-ros-namespace namespace="camera"/>
+    <group>
+      <push-ros-namespace namespace="frontcenter"/>
+
+      <!-- (usb_cam_node is assumed to have launched on logging PC) -->
+      <node pkg="topic_tools" exec="relay" name="camera_info_relay_frontcenter" output="log">
+        <param name="input_topic" value="/edgar/sensor/camera/basler/frontcenter/camera_info"/>
+        <param name="output_topic" value="camera_info"/>
+        <param name="type" value="sensor_msgs/msg/CameraInfo"/>
+        <param name="reliability" value="best_effort"/>
+      </node>
+
+      <node pkg="topic_tools" exec="relay" name="camera_image_relay_frontcenter" output="log">
+        <param name="input_topic" value="/edgar/sensor/camera/basler/frontcenter/image_resized"/>
+        <param name="output_topic" value="image_raw"/>
+        <param name="type" value="sensor_msgs/msg/Image"/>
+        <param name="reliability" value="best_effort"/>
+      </node>
+    </group>
+
+    <group>
+      <push-ros-namespace namespace="frontleft"/>
+
+      <!-- (usb_cam_node is assumed to have launched on logging PC) -->
+      <node pkg="topic_tools" exec="relay" name="camera_info_relay_frontleft" output="log">
+        <param name="input_topic" value="/edgar/sensor/camera/basler/frontleft/camera_info"/>
+        <param name="output_topic" value="camera_info"/>
+        <param name="type" value="sensor_msgs/msg/CameraInfo"/>
+        <param name="reliability" value="best_effort"/>
+      </node>
+
+      <node pkg="topic_tools" exec="relay" name="camera_image_relay_frontleft" output="log">
+        <param name="input_topic" value="/edgar/sensor/camera/basler/frontleft/image_resized"/>
+        <param name="output_topic" value="image_raw"/>
+        <param name="type" value="sensor_msgs/msg/Image"/>
+        <param name="reliability" value="best_effort"/>
+      </node>
+    </group>
+
+    <group>
+      <push-ros-namespace namespace="frontright"/>
+
+      <!-- (usb_cam_node is assumed to have launched on logging PC) -->
+      <node pkg="topic_tools" exec="relay" name="camera_info_relay_frontright" output="log">
+        <param name="input_topic" value="/edgar/sensor/camera/basler/frontright/camera_info"/>
+        <param name="output_topic" value="camera_info"/>
+        <param name="type" value="sensor_msgs/msg/CameraInfo"/>
+        <param name="reliability" value="best_effort"/>
+      </node>
+
+      <node pkg="topic_tools" exec="relay" name="camera_image_relay_frontright" output="log">
+        <param name="input_topic" value="/edgar/sensor/camera/basler/frontright/image_resized"/>
+        <param name="output_topic" value="image_raw"/>
+        <param name="type" value="sensor_msgs/msg/Image"/>
+        <param name="reliability" value="best_effort"/>
+      </node>
+    </group>
+
+        <group>
+      <push-ros-namespace namespace="rearcenter"/>
+
+      <!-- (usb_cam_node is assumed to have launched on logging PC) -->
+      <node pkg="topic_tools" exec="relay" name="camera_info_relay_rearcenter" output="log">
+        <param name="input_topic" value="/edgar/sensor/camera/basler/rearcenter/camera_info"/>
+        <param name="output_topic" value="camera_info"/>
+        <param name="type" value="sensor_msgs/msg/CameraInfo"/>
+        <param name="reliability" value="best_effort"/>
+      </node>
+
+      <node pkg="topic_tools" exec="relay" name="camera_image_relay_rearcenter" output="log">
+        <param name="input_topic" value="/edgar/sensor/camera/basler/rearcenter/image_resized"/>
+        <param name="output_topic" value="image_raw"/>
+        <param name="type" value="sensor_msgs/msg/Image"/>
+        <param name="reliability" value="best_effort"/>
+      </node>
+    </group>
+  </group>
+</launch>
